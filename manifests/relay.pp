@@ -51,6 +51,9 @@ define carbon::relay (
   if $pickle_receiver_interface {
     validate_ip_address($pickle_receiver_interface)
   }
+  if $udp_receiver_interface {
+    validate_ip_address($udp_receiver_interface)
+  }
 
   ::concat::fragment { "${::carbon::conf_dir}/carbon.conf relay ${name}":
     content => template("${module_name}/carbon.conf.relay.erb"),
