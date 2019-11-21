@@ -35,6 +35,9 @@ define carbon::relay (
   Optional[Boolean]           $use_whitelist              = undef,
   Optional[String]            $carbon_metric_prefix       = undef,
   Optional[Integer[0]]        $carbon_metric_interval     = undef,
+  Optional[Boolean]           $enable_udp_listener        = undef,
+  Optional[String]            $udp_receiver_interface     = undef,
+  Optional[Integer[0, 65535]] $udp_receiver_port          = undef,
 ) {
 
   if ! defined(Class['::carbon']) {

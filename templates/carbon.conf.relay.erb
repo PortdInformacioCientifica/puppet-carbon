@@ -48,3 +48,12 @@ CARBON_METRIC_PREFIX = <%= @carbon_metric_prefix %>
 <% if @carbon_metric_interval -%>
 CARBON_METRIC_INTERVAL = <%= @carbon_metric_interval %>
 <% end -%>
+<% unless @enable_udp_listener.nil? -%>
+ENABLE_UDP_LISTENER = <%= @enable_udp_listener ? 'True' : 'False' %>
+<% end -%>
+<% if @udp_receiver_interface -%>
+UDP_RECEIVER_INTERFACE = <%= @udp_receiver_interface %>
+<% end -%>
+<% if @udp_receiver_port -%>
+UDP_RECEIVER_PORT = <%= @udp_receiver_port %>
+<% end -%>
